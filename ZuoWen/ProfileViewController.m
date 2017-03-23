@@ -7,8 +7,13 @@
 //
 
 #import "ProfileViewController.h"
+#import "UserCenter.h"
+#import "LoginViewController.h"
 
 @interface ProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 
 @end
 
@@ -16,12 +21,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([UserCenter shareUserCenter].name) {
+        self.userNameLabel.text = [UserCenter shareUserCenter].name;
+        self.loginButton.backgroundColor = [UIColor greenColor];
+        [self.loginButton setTitle:@"退出登录" forState:UIControlStateNormal];
+    } else {
+        self.userNameLabel.text = @"作文帮";
+        [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)saveButtonAction:(UIButton *)sender {
+}
+
+
+- (IBAction)loginButtonAction:(UIButton *)sender {
+    if ([UserCenter shareUserCenter].name) {
+        [[UserCenter shareUserCenter] loginOut];
+    } else {
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nav = [main instantiateViewControllerWithIdentifier:@"LoginViewControllerNavi"];
+        [self.navigationController presentViewController:nav animated:YES completion:nil];
+    }
 }
 
 /*

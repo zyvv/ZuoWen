@@ -23,6 +23,9 @@
 		97A680951E82BFCD00C37FA5 /* ZuoWenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A680931E82BFCD00C37FA5 /* ZuoWenCell.m */; };
 		97A680961E82BFCD00C37FA5 /* ZuoWenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A680941E82BFCD00C37FA5 /* ZuoWenCell.xib */; };
 		97A680991E82C20500C37FA5 /* ZuoWenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A680981E82C20500C37FA5 /* ZuoWenViewController.m */; };
+		C15EA39B1E83733E006790A1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15EA39A1E83733E006790A1 /* LoginViewController.m */; };
+		C15EA39E1E837525006790A1 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15EA39D1E837525006790A1 /* RegisterViewController.m */; };
+		C15EA3A11E83776D006790A1 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C15EA3A01E83776D006790A1 /* UserCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,12 @@
 		97A680941E82BFCD00C37FA5 /* ZuoWenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZuoWenCell.xib; sourceTree = "<group>"; };
 		97A680971E82C20500C37FA5 /* ZuoWenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZuoWenViewController.h; sourceTree = "<group>"; };
 		97A680981E82C20500C37FA5 /* ZuoWenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZuoWenViewController.m; sourceTree = "<group>"; };
+		C15EA3991E83733E006790A1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C15EA39A1E83733E006790A1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C15EA39C1E837525006790A1 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C15EA39D1E837525006790A1 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C15EA39F1E83776D006790A1 /* UserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenter.h; sourceTree = "<group>"; };
+		C15EA3A01E83776D006790A1 /* UserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenter.m; sourceTree = "<group>"; };
 		CF29B33D13D73A600CA4694E /* libPods-ZuoWen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZuoWen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83AE8684FB7CEE31D59A51E /* Pods-ZuoWen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZuoWen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZuoWen/Pods-ZuoWen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,8 +154,14 @@
 				97A6808B1E82B5EC00C37FA5 /* ProfileViewController.m */,
 				97A680971E82C20500C37FA5 /* ZuoWenViewController.h */,
 				97A680981E82C20500C37FA5 /* ZuoWenViewController.m */,
+				C15EA3991E83733E006790A1 /* LoginViewController.h */,
+				C15EA39A1E83733E006790A1 /* LoginViewController.m */,
+				C15EA39C1E837525006790A1 /* RegisterViewController.h */,
+				C15EA39D1E837525006790A1 /* RegisterViewController.m */,
 				97A6808F1E82BE7F00C37FA5 /* Model.h */,
 				97A680901E82BE7F00C37FA5 /* Model.m */,
+				C15EA39F1E83776D006790A1 /* UserCenter.h */,
+				C15EA3A01E83776D006790A1 /* UserCenter.m */,
 				97A6805A1E82AF7C00C37FA5 /* Main.storyboard */,
 				97A6805D1E82AF7C00C37FA5 /* Assets.xcassets */,
 				97A6805F1E82AF7C00C37FA5 /* LaunchScreen.storyboard */,
@@ -265,7 +280,7 @@
 				TargetAttributes = {
 					97A6804D1E82AF7B00C37FA5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = R9P3557NQX;
+						DevelopmentTeam = QXJB9XPNQ5;
 						ProvisioningStyle = Automatic;
 					};
 					97A680661E82AF7C00C37FA5 = {
@@ -389,9 +404,12 @@
 				97A680891E82B5DD00C37FA5 /* NewViewController.m in Sources */,
 				97A680531E82AF7C00C37FA5 /* main.m in Sources */,
 				97A680911E82BE7F00C37FA5 /* Model.m in Sources */,
+				C15EA39E1E837525006790A1 /* RegisterViewController.m in Sources */,
+				C15EA39B1E83733E006790A1 /* LoginViewController.m in Sources */,
 				97A680951E82BFCD00C37FA5 /* ZuoWenCell.m in Sources */,
 				97A6808C1E82B5EC00C37FA5 /* ProfileViewController.m in Sources */,
 				97A680861E82B5D300C37FA5 /* HomeViewController.m in Sources */,
+				C15EA3A11E83776D006790A1 /* UserCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +559,7 @@
 			baseConfigurationReference = F83AE8684FB7CEE31D59A51E /* Pods-ZuoWen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R9P3557NQX;
+				DEVELOPMENT_TEAM = QXJB9XPNQ5;
 				INFOPLIST_FILE = ZuoWen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangyangwei.ZuoWen;
@@ -554,7 +572,7 @@
 			baseConfigurationReference = 39C96D4AB3748E3D05C9B3F7 /* Pods-ZuoWen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R9P3557NQX;
+				DEVELOPMENT_TEAM = QXJB9XPNQ5;
 				INFOPLIST_FILE = ZuoWen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangyangwei.ZuoWen;

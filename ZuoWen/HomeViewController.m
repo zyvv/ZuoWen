@@ -61,6 +61,7 @@
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ZuoWenViewController *vc = [main instantiateViewControllerWithIdentifier:@"ZuoWenViewController"];
     vc.zuowen = _dataArray[indexPath.row];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
