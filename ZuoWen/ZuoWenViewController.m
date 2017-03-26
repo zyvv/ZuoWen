@@ -25,7 +25,6 @@
     UIToolbar *tool = [[UIToolbar alloc] initWithFrame:CGRectMake(0, kScreenHeight - 44 - 64, kScreenWidth, 44)];
     tool.backgroundColor = [UIColor whiteColor];
     tool.translucent = NO;
-    tool.tintColor = [UIColor orangeColor];
     [self.view addSubview:tool];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     

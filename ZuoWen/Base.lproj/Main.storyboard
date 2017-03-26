@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--首页-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
@@ -21,30 +21,15 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xz8-lS-aeP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="xz8-lS-aeP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lu4-xk-LKZ"/>
-                            <constraint firstAttribute="trailing" secondItem="xz8-lS-aeP" secondAttribute="trailing" id="foR-UA-fIS"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xz8-lS-aeP" secondAttribute="bottom" id="h2O-11-OR2"/>
-                            <constraint firstItem="xz8-lS-aeP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wYQ-kM-QhE"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="LMS-97-A68">
+                    <navigationItem key="navigationItem" title="首页" id="LMS-97-A68">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dLe-pA-L3W">
                             <connections>
                                 <segue destination="4qO-4h-CpJ" kind="presentation" id="wpB-eR-3To"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="xz8-lS-aeP" id="Zbs-Jg-cUX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="2080.8000000000002" y="830.73463268365822"/>
         </scene>
-        <!--Login View Controller-->
+        <!--登录-->
         <scene sceneID="bRf-Rq-URt">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BEA-Va-wS7" customClass="LoginViewController" sceneMemberID="viewController">
@@ -121,17 +106,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-hm-kE5">
-                                <rect key="frame" x="147" y="234" width="80" height="30"/>
+                                <rect key="frame" x="137" y="184" width="100" height="37.5"/>
+                                <color key="backgroundColor" red="0.16956797509999999" green="1" blue="0.40665065579999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="V0g-hm-kE5" secondAttribute="height" multiplier="8:3" id="69u-tu-eCP"/>
+                                    <constraint firstAttribute="width" constant="100" id="iBM-ug-Zui"/>
                                 </constraints>
-                                <state key="normal" title="登录"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="loginButtonAction:" destination="BEA-Va-wS7" eventType="touchUpInside" id="hUe-XG-9b0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-5r-Oax">
-                                <rect key="frame" x="170" y="294" width="34" height="26"/>
+                                <rect key="frame" x="170" y="251.5" width="34" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="去注册"/>
                                 <connections>
@@ -144,7 +133,7 @@
                         <constraints>
                             <constraint firstItem="FeT-e1-fyX" firstAttribute="leading" secondItem="Uoe-3s-7PK" secondAttribute="trailing" constant="10" id="5Cl-qf-aXm"/>
                             <constraint firstItem="V0g-hm-kE5" firstAttribute="centerX" secondItem="QQV-nZ-46O" secondAttribute="centerX" id="BBi-qt-d9c"/>
-                            <constraint firstItem="V0g-hm-kE5" firstAttribute="top" secondItem="Dva-nR-4d4" secondAttribute="bottom" constant="100" id="KV7-Lc-IQG"/>
+                            <constraint firstItem="V0g-hm-kE5" firstAttribute="top" secondItem="Dva-nR-4d4" secondAttribute="bottom" constant="50" id="KV7-Lc-IQG"/>
                             <constraint firstItem="QhG-5r-Oax" firstAttribute="centerX" secondItem="QQV-nZ-46O" secondAttribute="centerX" id="LS1-Or-z9u"/>
                             <constraint firstAttribute="trailing" secondItem="FeT-e1-fyX" secondAttribute="trailing" constant="30" id="YTO-2V-TFq"/>
                             <constraint firstItem="Dva-nR-4d4" firstAttribute="width" secondItem="FeT-e1-fyX" secondAttribute="width" id="ZCt-6c-n87"/>
@@ -159,7 +148,7 @@
                             <constraint firstItem="Uoe-3s-7PK" firstAttribute="top" secondItem="LiH-oz-N06" secondAttribute="bottom" constant="50" id="oVA-fz-cVC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5S2-Lu-3Jf">
+                    <navigationItem key="navigationItem" title="登录" id="5S2-Lu-3Jf">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="FIe-Hw-MEe">
                             <connections>
                                 <action selector="closeAction:" destination="BEA-Va-wS7" id="wtn-VZ-hAN"/>
@@ -175,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="4231.1999999999998" y="929.68515742128943"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--我的-->
         <scene sceneID="rsx-gy-Bet">
             <objects>
                 <viewController id="uE0-VO-Qyf" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -188,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLx-Zu-dLx">
-                                <rect key="frame" x="0.0" y="231" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="195" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Auq-EX-vtd"/>
                                 </constraints>
@@ -201,27 +190,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-3n-X1c">
-                                <rect key="frame" x="166" y="160" width="42" height="21"/>
+                                <rect key="frame" x="166" y="124" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-Qb-WAc">
-                                <rect key="frame" x="137.5" y="30" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="30" width="100" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="gqB-4Y-wrl"/>
-                                    <constraint firstAttribute="width" secondItem="AhS-Qb-WAc" secondAttribute="height" multiplier="1:1" id="pRe-P0-eJb"/>
+                                    <constraint firstAttribute="width" secondItem="AhS-Qb-WAc" secondAttribute="height" multiplier="275:176" id="pRe-P0-eJb"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuP-O7-27K">
-                                <rect key="frame" x="36" y="331" width="302" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="36" y="295" width="302" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EuP-O7-27K" secondAttribute="height" multiplier="151:25" id="PCl-l2-O4d"/>
                                     <constraint firstAttribute="height" constant="50" id="l8s-RI-Cop"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="退出登录">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected" title="登录">
@@ -245,10 +233,11 @@
                             <constraint firstItem="AhS-Qb-WAc" firstAttribute="top" secondItem="CNB-hS-Ke1" secondAttribute="bottom" constant="30" id="sKZ-gJ-xzk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pIg-Sj-wqO"/>
+                    <navigationItem key="navigationItem" title="我的" id="pIg-Sj-wqO"/>
                     <connections>
                         <outlet property="iconImageView" destination="AhS-Qb-WAc" id="8aY-B1-lYA"/>
                         <outlet property="loginButton" destination="EuP-O7-27K" id="8yK-se-8WU"/>
+                        <outlet property="saveButton" destination="eLx-Zu-dLx" id="Zfl-EG-rR6"/>
                         <outlet property="userNameLabel" destination="FFI-3n-X1c" id="RD2-A8-JAm"/>
                     </connections>
                 </viewController>
@@ -279,7 +268,7 @@
         <scene sceneID="Nom-3S-YEl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VRS-gT-3bZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="ydp-eB-3hq"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="home" selectedImage="home_press" id="ydp-eB-3hq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="f5D-qf-EaI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -390,7 +379,7 @@
         <scene sceneID="DqL-I1-HgC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g3H-QP-uZ3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="LaI-Ku-Ppd"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="mine" selectedImage="mine_press" id="LaI-Ku-Ppd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zBJ-fy-Ra7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -424,10 +413,10 @@
             </objects>
             <point key="canvasLocation" x="2918" y="114"/>
         </scene>
-        <!--Register View Controller-->
+        <!--注册-->
         <scene sceneID="p9k-QC-Wlg">
             <objects>
-                <viewController id="MWV-Io-OYd" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController title="注册" id="MWV-Io-OYd" customClass="RegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="poc-Sr-mGM"/>
                         <viewControllerLayoutGuide type="bottom" id="bRB-fc-7wH"/>
@@ -467,11 +456,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVG-n6-6go">
-                                <rect key="frame" x="147" y="288" width="80" height="30"/>
+                                <rect key="frame" x="137" y="238" width="100" height="37.5"/>
+                                <color key="backgroundColor" red="0.16956797509999999" green="1" blue="0.40665065579999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Krx-4i-t1F"/>
                                     <constraint firstAttribute="width" secondItem="vVG-n6-6go" secondAttribute="height" multiplier="8:3" id="do2-ZE-u1C"/>
                                 </constraints>
-                                <state key="normal" title="注册"/>
+                                <state key="normal" title="注册">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="registerButtonAction:" destination="MWV-Io-OYd" eventType="touchUpInside" id="xqY-82-vGX"/>
                                 </connections>
@@ -492,7 +485,7 @@
                             <constraint firstItem="5KK-Pm-klO" firstAttribute="leading" secondItem="ETv-T2-Lf9" secondAttribute="leading" id="Iuw-kU-LPH"/>
                             <constraint firstItem="vVG-n6-6go" firstAttribute="centerX" secondItem="SyT-7p-Unr" secondAttribute="centerX" id="JJj-gf-BRt"/>
                             <constraint firstItem="x1e-NS-C3H" firstAttribute="centerY" secondItem="D2b-bs-V6W" secondAttribute="centerY" id="Lgd-dk-M9i"/>
-                            <constraint firstItem="vVG-n6-6go" firstAttribute="top" secondItem="dLt-oX-3E8" secondAttribute="bottom" constant="100" id="R8c-Ka-eQd"/>
+                            <constraint firstItem="vVG-n6-6go" firstAttribute="top" secondItem="dLt-oX-3E8" secondAttribute="bottom" constant="50" id="R8c-Ka-eQd"/>
                             <constraint firstItem="Csu-pn-lDU" firstAttribute="width" secondItem="x1e-NS-C3H" secondAttribute="width" id="YZS-M0-nAh"/>
                             <constraint firstAttribute="trailing" secondItem="x1e-NS-C3H" secondAttribute="trailing" constant="30" id="ZuI-fO-wBl"/>
                             <constraint firstItem="5KK-Pm-klO" firstAttribute="top" secondItem="Csu-pn-lDU" secondAttribute="bottom" constant="30" id="exR-Mc-ade"/>
@@ -536,4 +529,10 @@
             <point key="canvasLocation" x="3292" y="929.68515742128943"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="24" height="24"/>
+        <image name="home_press" width="24" height="24"/>
+        <image name="mine" width="24" height="24"/>
+        <image name="mine_press" width="24" height="24"/>
+    </resources>
 </document>
