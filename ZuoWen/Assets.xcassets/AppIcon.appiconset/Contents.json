@@ -3,49 +3,49 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneNotification_20pt@2x.png",
+      "filename" : "GroupiPhoneNotification_20pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneNotification_20pt@3x.png",
+      "filename" : "GroupiPhoneNotification_20pt@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneSpootlight5_29pt@2x.png",
+      "filename" : "GroupiPhoneSpootlight5_29pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneSpootlight5_29pt@3x.png",
+      "filename" : "GroupiPhoneSpootlight5_29pt@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneSpootlight7_40pt@2x.png",
+      "filename" : "GroupiPhoneSpootlight7_40pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneSpootlight7_40pt@3x.png",
+      "filename" : "GroupiPhoneSpootlight7_40pt@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneApp_60pt@2x.png",
+      "filename" : "GroupiPhoneApp_60pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iTunesArtwork@2xiPhoneApp_60pt@3x.png",
+      "filename" : "GroupiPhoneApp_60pt@3x.png",
       "scale" : "3x"
     }
   ],

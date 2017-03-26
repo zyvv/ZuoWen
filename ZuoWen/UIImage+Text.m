@@ -78,8 +78,6 @@
     
     UIGraphicsEndImageContext();
     
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-    
     return image;
     
 }

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end
 
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _iconImageView.image = [UIImage imageNamed:@"文"];
 
 }
 
@@ -29,12 +31,17 @@
     [super viewWillAppear:animated];
     if ([UserCenter shareUserCenter].name) {
         self.userNameLabel.text = [UserCenter shareUserCenter].name;
-        self.loginButton.backgroundColor = [UIColor greenColor];
+        self.loginButton.backgroundColor = [UIColor redColor];
         [self.loginButton setTitle:@"退出登录" forState:UIControlStateNormal];
+        self.saveButton.hidden = NO;
+        
     } else {
         self.userNameLabel.text = @"作文帮";
         [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
+        self.loginButton.backgroundColor = [UIColor greenColor];
+        self.saveButton.hidden = YES;
     }
+    
 }
 
 - (void)didReceiveMemoryWarning {
