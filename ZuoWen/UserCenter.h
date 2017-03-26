@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class ZuoWen;
 @interface UserCenter : NSObject
 +(instancetype)shareUserCenter;
 
@@ -18,5 +19,17 @@
 - (BOOL)loginWithUserName:(NSString *)userName password:(NSString *)password;
 
 - (BOOL)registerWithUserName:(NSString *)userName password:(NSString *)password;
+
+- (void)loveZuoWen:(NSString *)zid;
+
+- (void)deleteLoveZuoWen:(NSString *)zid;
+
+- (BOOL)isLoved:(NSString *)zid;
+
+- (NSArray *)getLoveList;
+
+- (NSArray *)getZuoWenList;
+
+- (void)addZuowen:(ZuoWen *)zuowen;
 
 @end

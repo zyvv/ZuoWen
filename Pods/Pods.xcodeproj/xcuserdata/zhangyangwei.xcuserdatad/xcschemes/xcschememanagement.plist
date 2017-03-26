@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Toast.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>YYKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,7 +42,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>297C37ECCC794DDFA809F3BEA5686486</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>68AEE43002BEA8DFADE8379D5F23B796</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>82CA472C54474A3DCD2B0B62A702AB79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>849675E6D1C044CFC07BDBB1FEEB3DFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

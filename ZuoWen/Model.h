@@ -16,6 +16,6 @@
 
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) NSInteger zid;
+@property (nonatomic, copy) NSString *zid;
 
 @end

@@ -8,9 +8,12 @@
 
 #import "UserCenter.h"
 #import <YYKit/YYKit.h>
+#import "Model.h"
 
 @interface UserCenter ()
 @property (nonatomic, copy, readwrite)NSString *name;
+@property (nonatomic, strong) YYCache *loveCache;
+@property (nonatomic, strong) YYCache *zuowenCache;
 
 @end
 
@@ -20,6 +23,13 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shareUserCenter = [[UserCenter alloc] init];
+        shareUserCenter.loveCache = [YYCache cacheWithName:@"love"];
+        shareUserCenter.zuowenCache = [YYCache cacheWithName:@"zuowen"];
+
+        if (![shareUserCenter.zuowenCache containsObjectForKey:@"zuowen"]) {
+            NSData *data = [NSData dataNamed:[NSString stringWithFormat:@"zuowen.json"]];
+            [shareUserCenter.zuowenCache setObject:data forKey:@"zuowen"];
+        }
     });
     return shareUserCenter;
 }
@@ -56,6 +66,96 @@
     
     }
     return NO;
+}
+
+- (NSSet *)loveList {
+    if (![UserCenter shareUserCenter].name) {
+        return nil;
+    }
+    
+    id love = [[UserCenter shareUserCenter].loveCache objectForKey:[UserCenter shareUserCenter].name];
+    return love;
+    
+}
+
+- (void)deleteLoveZuoWen:(NSString *)zid {
+    NSMutableSet *set = [NSMutableSet setWithSet:[[UserCenter shareUserCenter] loveList]];
+    for (NSString *loveZid in [[UserCenter shareUserCenter] loveList]) {
+        if ([loveZid isEqualToString:zid]) {
+            [set removeObject:zid];
+        }
+    }
+    [[UserCenter shareUserCenter].loveCache setObject:[set copy] forKey:[UserCenter shareUserCenter].name];
+}
+
+- (void)loveZuoWen:(NSString *)zid {
+    if (![UserCenter shareUserCenter].name) {
+        return;
+    }
+    NSSet *loveList = [self loveList];
+    if (loveList) {
+        NSMutableSet *set = [NSMutableSet setWithSet:loveList];
+        [set addObject:zid];
+        [[UserCenter shareUserCenter].loveCache setObject:[set copy] forKey:[UserCenter shareUserCenter].name];
+    } else {
+        NSSet *set = [NSSet setWithObject:zid];
+        [[UserCenter shareUserCenter].loveCache setObject:set forKey:[UserCenter shareUserCenter].name];
+    }
+    
+    
+}
+
+- (BOOL)isLoved:(NSString *)zid {
+    if (![UserCenter shareUserCenter].name) {
+        return NO;
+    }
+    id love = [[UserCenter shareUserCenter].loveCache objectForKey:[UserCenter shareUserCenter].name];
+    NSLog(@"=== %@", love);
+    if (love) {
+        for (NSString *loveId in love) {
+            if ([loveId isEqualToString:zid]) {
+                return YES;
+            }
+        }
+    }
+    return NO;
+}
+
+- (NSArray *)getLoveList {
+    NSData *data = (NSData *)[[UserCenter shareUserCenter].zuowenCache objectForKey:@"zuowen"];
+    if (data) {
+        NSArray *zuowenList = [NSArray modelArrayWithClass:[ZuoWen class] json: data];
+        NSSet *loveIdList = [self loveList];
+        NSMutableArray *loveList = [NSMutableArray arrayWithCapacity:0];
+        for (ZuoWen *zuowen in zuowenList) {
+            for (NSString *zid in loveIdList) {
+                if ([zuowen.zid isEqualToString:zid]) {
+                    [loveList addObject:zuowen];
+                }
+            }
+        }
+        return [loveList copy];
+        
+    }
+    return nil;
+}
+
+- (NSArray *)getZuoWenList {
+    NSData *data = (NSData *)[[UserCenter shareUserCenter].zuowenCache objectForKey:@"zuowen"];
+    if (data) {
+       return [NSArray modelArrayWithClass:[ZuoWen class] json: data];
+    }
+    return nil;
+}
+
+- (void)addZuowen:(ZuoWen *)zuowen {
+    NSData *data = (NSData *)[[UserCenter shareUserCenter].zuowenCache objectForKey:@"zuowen"];
+    NSMutableArray *zuowenList = [NSMutableArray arrayWithCapacity:0];
+    if (data) {
+        [zuowenList appendObjects:[NSArray modelArrayWithClass:[ZuoWen class] json: data]];
+    }
+    [zuowenList addObject:zuowen];
+    [[UserCenter shareUserCenter].zuowenCache setObject:[zuowenList modelToJSONData] forKey:@"zuowen"];
 }
 
 @end

@@ -1,50 +1,40 @@
 //
-//  HomeViewController.m
+//  MySaveViewController.m
 //  ZuoWen
 //
-//  Created by 张洋威 on 2017/3/22.
+//  Created by 张洋威 on 2017/3/25.
 //  Copyright © 2017年 张洋威. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import "YYKit.h"
-#import "Model.h"
+#import "MySaveViewController.h"
+#import "UserCenter.h"
 #import "ZuoWenCell.h"
 #import "ZuoWenViewController.h"
-#import "UserCenter.h"
 
-@interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface MySaveViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
 
 @end
 
-@implementation HomeViewController
+@implementation MySaveViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"ZuoWenCell" bundle:nil] forCellReuseIdentifier:@"ZuoWenCell"];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.dataArray = [[UserCenter shareUserCenter] getZuoWenList];
+    self.dataArray = [[UserCenter shareUserCenter] getLoveList];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)setDataArray:(NSArray *)dataArray {
-    if (_dataArray != dataArray) {
-        _dataArray = dataArray;
-    }
-    [_tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -70,6 +60,7 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
 
 /*
 #pragma mark - Navigation

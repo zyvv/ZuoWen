@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "UserCenter.h"
 #import "LoginViewController.h"
+#import "MySaveViewController.h"
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -41,6 +42,11 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveButtonAction:(UIButton *)sender {
+    if ([UserCenter shareUserCenter].name) {
+        MySaveViewController *mySave = [[MySaveViewController alloc] init];
+        mySave.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:mySave animated:YES];
+    }
 }
 
 
