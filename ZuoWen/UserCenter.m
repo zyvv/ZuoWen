@@ -110,7 +110,6 @@
         return NO;
     }
     id love = [[UserCenter shareUserCenter].loveCache objectForKey:[UserCenter shareUserCenter].name];
-    NSLog(@"=== %@", love);
     if (love) {
         for (NSString *loveId in love) {
             if ([loveId isEqualToString:zid]) {
@@ -154,7 +153,7 @@
     if (data) {
         [zuowenList appendObjects:[NSArray modelArrayWithClass:[ZuoWen class] json: data]];
     }
-    [zuowenList addObject:zuowen];
+    [zuowenList insertObject:zuowen atIndex:0];
     [[UserCenter shareUserCenter].zuowenCache setObject:[zuowenList modelToJSONData] forKey:@"zuowen"];
 }
 

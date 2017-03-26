@@ -14,7 +14,7 @@
 #import "UserCenter.h"
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
 
 @end
@@ -24,6 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
