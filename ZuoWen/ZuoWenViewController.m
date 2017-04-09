@@ -14,6 +14,7 @@
 @interface ZuoWenViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *zuowenTextView;
 @property (strong, nonatomic) UIButton *saveButton;
+@property (nonatomic, strong) UIBarButtonItem *navItem;
 
 @end
 
@@ -38,6 +39,8 @@
     
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAction:)];
     [tool setItems:@[item, saveItem, item, shareItem]];
+    
+    self.navItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteItemAction:)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,8 +64,19 @@
     } else {
         self.saveButton.selected = NO;
     }
+    if ([UserCenter shareUserCenter].name && _zuowen.author && [[UserCenter shareUserCenter].name isEqualToString:_zuowen.author]) {
+        self.navigationItem.rightBarButtonItem = self.navItem;
+    } else {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     
 }
+
+- (void)deleteItemAction:(UIBarButtonItem *)item {
+    [[UserCenter shareUserCenter] deleteZuoWen:_zuowen.zid];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)saveAction:(UIButton *)sender {
     if (![UserCenter shareUserCenter].name) {
         UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

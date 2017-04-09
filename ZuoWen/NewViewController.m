@@ -41,11 +41,19 @@
     if (!_titleTextField.text.length) {
         return;
     }
-    ZuoWen *zuowen = [ZuoWen new];
-    zuowen.zid = [NSString stringWithUUID];
-    zuowen.content = _contentTextView.text;
-    zuowen.title = _titleTextField.text;
-    [[UserCenter shareUserCenter] addZuowen:zuowen];
+    if ([UserCenter shareUserCenter].name) {
+        ZuoWen *zuowen = [ZuoWen new];
+        zuowen.zid = [NSString stringWithUUID];
+        zuowen.content = _contentTextView.text;
+        zuowen.title = _titleTextField.text;
+        zuowen.author = [UserCenter shareUserCenter].name;
+        [[UserCenter shareUserCenter] addZuowen:zuowen];
+    } else {
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nav = [main instantiateViewControllerWithIdentifier:@"LoginViewControllerNavi"];
+        [self.navigationController presentViewController:nav animated:YES completion:nil];
+    }
+    
     [self closeSelf:nil];
 }
 

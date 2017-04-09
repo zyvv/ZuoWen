@@ -29,7 +29,13 @@
     [self.view addSubview:self.tableView];
     
     [_tableView registerNib:[UINib nibWithNibName:@"ZuoWenCell" bundle:nil] forCellReuseIdentifier:@"ZuoWenCell"];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.dataArray = [[UserCenter shareUserCenter] getLoveList];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

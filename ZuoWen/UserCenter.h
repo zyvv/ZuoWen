@@ -23,6 +23,7 @@
 - (void)loveZuoWen:(NSString *)zid;
 
 - (void)deleteLoveZuoWen:(NSString *)zid;
+- (void)deleteZuoWen:(NSString *)zid;
 
 - (BOOL)isLoved:(NSString *)zid;
 

@@ -26,7 +26,7 @@
                     <navigationItem key="navigationItem" title="首页" id="LMS-97-A68">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dLe-pA-L3W">
                             <connections>
-                                <segue destination="4qO-4h-CpJ" kind="presentation" id="wpB-eR-3To"/>
+                                <action selector="newAction:" destination="BYZ-38-t0r" id="LdO-gH-hBh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -397,7 +397,7 @@
         <!--发布-->
         <scene sceneID="PrY-dT-iWM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4qO-4h-CpJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NewViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4qO-4h-CpJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发布" id="FAk-6c-3qU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="D8c-gw-kuz">

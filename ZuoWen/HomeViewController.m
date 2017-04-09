@@ -43,6 +43,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)newAction:(id)sender {
+    if ([UserCenter shareUserCenter].name) {
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nav = [main instantiateViewControllerWithIdentifier:@"NewViewControllerNav"];
+        [self.navigationController presentViewController:nav animated:YES completion:nil];
+    } else {
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nav = [main instantiateViewControllerWithIdentifier:@"LoginViewControllerNavi"];
+        [self.navigationController presentViewController:nav animated:YES completion:nil];
+    }
+
+}
 
 - (void)setDataArray:(NSArray *)dataArray {
     if (_dataArray != dataArray) {

@@ -88,6 +88,25 @@
     [[UserCenter shareUserCenter].loveCache setObject:[set copy] forKey:[UserCenter shareUserCenter].name];
 }
 
+- (void)deleteZuoWen:(NSString *)zid {
+    NSData *data = (NSData *)[[UserCenter shareUserCenter].zuowenCache objectForKey:@"zuowen"];
+    NSMutableArray *zuowenList = [NSMutableArray arrayWithCapacity:0];
+    if (data) {
+        [zuowenList appendObjects:[NSArray modelArrayWithClass:[ZuoWen class] json: data]];
+    }
+    ZuoWen *d = nil;
+    for (ZuoWen *zuowen in zuowenList) {
+        if ([zuowen.zid isEqualToString:zid]) {
+            d = zuowen;
+        }
+    }
+    if (d && [zuowenList containsObject:d]) {
+        [zuowenList removeObject:d];
+    }
+    
+    [[UserCenter shareUserCenter].zuowenCache setObject:[zuowenList modelToJSONData] forKey:@"zuowen"];
+}
+
 - (void)loveZuoWen:(NSString *)zid {
     if (![UserCenter shareUserCenter].name) {
         return;

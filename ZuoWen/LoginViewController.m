@@ -36,7 +36,7 @@
     BOOL login = [[UserCenter shareUserCenter] loginWithUserName:_usernameTextField.text password:_passwordTextField.text];
     if (login) {
         __weak LoginViewController *weakSelf = self;
-        [self.view showToast:self.view duration:.5 position:CSToastPositionCenter completion:^(BOOL didTap) {
+        [self.view makeToast:@"登录成功" duration:.5 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
             [weakSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
         }];
     } else {

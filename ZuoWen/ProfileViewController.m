@@ -60,6 +60,9 @@
 - (IBAction)loginButtonAction:(UIButton *)sender {
     if ([UserCenter shareUserCenter].name) {
         [[UserCenter shareUserCenter] loginOut];
+        [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
+        self.loginButton.backgroundColor = [UIColor greenColor];
+        self.saveButton.hidden = YES;
     } else {
         UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UINavigationController *nav = [main instantiateViewControllerWithIdentifier:@"LoginViewControllerNavi"];
